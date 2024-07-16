@@ -1,0 +1,323 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loading {
+    background: linear-gradient(90deg, #000, #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: shineKeyframe 3s linear infinite;
+    background-clip: text;
+}
+
+@keyframes shineKeyframe {
+    0% {
+        background-position: -500%;
+    }
+    100% {
+        background-position: 500%;
+    }
+}
+
+.loading-container {
+    animation: slideUpKeyframe 1s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes slideUpKeyframe {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideDownTwoKeyframe {
+    from{
+        transform: translateY(-56px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.slideDownTwo {
+    animation: slideDownTwoKeyframe 300ms ease-in;
+}
+
+@keyframes headerSliderKeyframe {
+    from{
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+  
+.header-slider {
+    animation: headerSliderKeyframe 0.5s ease-in-out;
+}
+
+.group:hover .group-hover\:visible {
+    visibility: visible;
+}
+  
+.group2:hover .group2-hover\:visible {
+    visibility: visible;
+}
+
+.wave:hover .wave:nth-child(1) {
+    animation: waveAnim1 75ms;
+}
+.wave:hover .wave:nth-child(2) {
+    animation: waveAnim1 75ms;
+    animation-delay: 20ms;
+}
+.wave:hover .wave:nth-child(3) {
+    animation: waveAnim1 75ms;
+    animation-delay: 40ms;
+}
+.wave:hover .wave:nth-child(4) {
+    animation: waveAnim1 75ms;
+    animation-delay: 60ms;
+}
+.wave:hover .wave:nth-child(5) {
+    animation: waveAnim1 75ms;
+    animation-delay: 80ms;
+}
+.wave:hover .wave:nth-child(6) {
+    animation: waveAnim1 75ms;
+    animation-delay: 100ms;
+}
+.wave:hover .wave:nth-child(7) {
+    animation: waveAnim1 75ms;
+    animation-delay: 120ms;
+}
+.wave:hover .wave:nth-child(8) {
+    animation: waveAnim1 75ms;
+    animation-delay: 140ms;
+}
+.wave:hover .wave:nth-child(9) {
+    animation: waveAnim1 75ms;
+    animation-delay: 160ms;
+}
+
+@keyframes waveAnim1 {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-3px);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+    75% {
+        transform: translateY(-9px);
+    }
+}
+
+@keyframes menuUpKeyframe {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+.menu.group:hover .invisible {
+    animation: menuUpKeyframe 300ms ease-in;
+}
+
+.temp:first-child {
+    margin-top: 32px;
+}
+
+.change {
+    background-color: inherit;
+}
+
+.grow {
+    animation: grow 200ms ease;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-3deg);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+@keyframes slideKeyframe {
+    0% {
+      transform: translate(0,0);
+    }
+    100% {
+      transform: translate(100%,0);
+    }
+}
+
+.slope {
+    min-width: 100%;
+    flex-shrink: 0;
+    animation: slideKeyframe reverse linear infinite 25s;
+    animation-play-state: running;
+}
+
+.slope h1 {
+    display: inline-block;
+    position: relative;
+}
+
+.photo {
+    background-image: url("https://uithemez.com/i/geekfolio/dark/assets/imgs/background/16.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-position-y: 50px;
+}
+
+@media (min-width: 768px) {
+    .photo::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 7%;
+        height: 100%;
+        background-color: #191919;
+    }
+}
+
+@media (min-width: 992px) {
+    .photo::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5%;
+        height: 100%;
+        background-color: #191919;
+    }
+}
+
+.last {
+    background-image: url("https://uithemez.com/i/geekfolio/dark/assets/imgs/svg-assets/circle-star.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.last:hover img {
+    filter: invert(0);
+}
+
+.last:hover p {
+    color: #000;
+}
+
+.progress-wrap {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	display: block;
+	border-radius: 50px;
+	box-shadow: inset  0 0 0 2px transparent;
+	z-index: 10000;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(15px);
+	-webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.progress-wrap.active-progress {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.progress-wrap::after {
+	position: absolute;
+	font-family: 'unicons';
+    content: '\2303';
+    margin-left: 13px;
+    margin-top: 4px;
+	line-height: 46px;
+	font-size: 24px;
+	color: #ababab;
+	left: 0;
+	top: 0;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	display: block;
+	z-index: 1;
+	-webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.progress-wrap:hover::after {
+	opacity: 0;
+}
+
+.progress-wrap::before {
+	position: absolute;
+	font-family: 'unicons';
+	content: '\2303';
+    margin-left: 13px;
+    margin-top: 4px;
+	line-height: 46px;
+	font-size: 24px;
+	opacity: 0;
+	background: transparent;
+	left: 0;
+	top: 0;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	display: block;
+	z-index: 2;
+	-webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+.progress-wrap:hover::before {
+	opacity: 1;
+}
+
+.progress-wrap svg path { 
+	fill: none; 
+}
+
+.progress-wrap svg.progress-circle path {
+	stroke: #ababab;
+	stroke-width: 4;
+	box-sizing:border-box;
+	-webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
